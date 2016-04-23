@@ -1,0 +1,102 @@
+body { background-color: #fff; padding-top: 70px;}
+
+.footer { color: #777; padding: 30px 0; border-top: 1px solid #e5e5e5; margin-top: 70px}
+.footer > .container {  padding-right: 15px; padding-left: 15px; }
+
+.index-header .tags {
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+.page-header-small h2 {
+	float: left;
+} 
+.page-header-small h4 {
+	text-align: right;
+}
+.label {
+	padding: 10px 0;
+	margin-top: 20px;
+	margin-bottom: auto;
+}
+.less_text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+.ads {
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Links */
+a, a:focus, a:hover { color: #000; }
+
+/** Ê×Ò³Í¼Æ¬ */
+.index-top{
+	height:225px;
+	width:225px;
+	border: 0;
+}
+.index-other{
+	height: 158px;
+	width: 158px;
+	border: 0;
+}
+
+#scrollUp:hover {
+    background-color: #333;
+}
+#scrollUp {
+    background-color: #777;
+    color: #eee;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    bottom: 20px;
+    right: 20px;
+    overflow: hidden;
+    width: 46px;
+    height: 46px;
+    border: none;
+    opacity: .8;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+@media screen and (max-width: 750px){
+	#scrollUp {
+	    bottom: 100px;
+	}
+	.index-top{
+		height:150px;
+		width:150px;
+		border: 0;
+	}
+	/* #ad_tuijian{
+		display: none;
+	} */
+}
+
+
+
+
+
