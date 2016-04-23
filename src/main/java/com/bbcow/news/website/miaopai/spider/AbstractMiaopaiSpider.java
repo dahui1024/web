@@ -66,9 +66,14 @@ public abstract class AbstractMiaopaiSpider {
 				vo.setId(channel.get("scid").asText());
 				JsonNode pic = channel.get("pic");
 				vo.setImg(pic.get("base").asText()+pic.get("m").asText());
+				
 				JsonNode ext = channel.get("ext");
 				vo.setLength(ext.get("lengthNice").asText());
 				String title = ext.get("t").asText().trim();
+				
+				JsonNode ext2 = channel.get("ext2");
+				vo.setCreateTime(ext2.get("createTime").asLong());
+				
 				vo.setTitle(title.replaceAll("(#(暴走漫画|每日一暴|陈翔六点半|飞碟说|飞碟一分钟|)#)", ""));
 				
 				vo.setW(ext.get("w").asText());

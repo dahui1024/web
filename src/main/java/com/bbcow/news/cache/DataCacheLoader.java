@@ -17,6 +17,9 @@ public class DataCacheLoader extends CacheLoader<String, List<? extends Abstract
 		if(key.matches("MP_[\\w]+")){
 			return AbstractMiaopaiSpider.getInstance(key).list();
 		}
+		if(key.equals("kuaikan")){
+			
+		}
 		if(key.matches("(province|country)")){
 			return AbstractMiguSpider.getInstance(key).list();
 		}

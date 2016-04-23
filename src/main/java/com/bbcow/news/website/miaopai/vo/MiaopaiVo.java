@@ -8,6 +8,7 @@ public class MiaopaiVo extends AbstractVo{
 	private String length;
 	private String w;
 	private String h;
+	private long createTime;
 	public String getImg() {
 		return img;
 	}
@@ -37,6 +38,12 @@ public class MiaopaiVo extends AbstractVo{
 	}
 	public void setH(String h) {
 		this.h = h;
+	}
+	public long getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(long createTime) {
+		this.createTime = createTime;
 	}
 	
 }

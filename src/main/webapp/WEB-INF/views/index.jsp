@@ -8,7 +8,95 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<h1 class="text-center">门牙引力波<small>&nbsp;&nbsp;一张嘴我看到了门牙，一上网我看到了世界。</small></h1>
+		<div class="row ">
+			<div class="col-xs-12 col-md-12 text-center">
+				<p class="lead">
+					<a href="/netease/photo/${readTop.photosetID}.html">
+						<img alt="${readTop.title}" src="${readTop.imgsrc}" class="img-responsive">
+						${readTop.title}
+					</a>
+				</p>
+			</div>
+		</div>
 		<div class="row">
+			<div class="index-header col-xs-12 col-md-12">
+				<h2 class="text-center bg-info">视频区</h2>
+				<div class="row text-center">
+					<p class="col-xs-12 col-md-2 lead"><a href="/miaopai/page/0?type=MP_papi">Papi酱</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/miaopai/page/0?type=MP_nima">暴走大事件</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/miaopai/page/0?type=MP_baisi">百思不得姐</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/miaopai/page/0?type=MP_feidie">飞碟说</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/miaopai/page/0?type=MP_chenxiang">陈翔六点半</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/miaopai/page/0?type=MP_baoman">暴走漫画</a></p>
+				</div>
+				<hr>
+				<c:forEach items="${videoList }" var="n" varStatus="s">
+					<div class="col-xs-12 col-md-6 lead less_text">
+						<a href="javascript:void(0)" class="" onclick="viewVideo('${n.id}','${n.title }','${n.length }')">
+							${n.title }
+						</a>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+		<div class="row">
+			<div class="index-header col-xs-12 col-md-12">
+				<h2 class="text-center bg-info">阅读区</h2>
+				<div class="row text-center">
+					<p class="col-xs-12 col-md-2 lead"><a href="/netease/page/0?channel=T1387970173334">网易看客</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/netease/page/0?channel=T1374655641708">读写客</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/netease/page/0?channel=T1374539968172">果壳科技</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/netease/page/0?channel=T1374539990324">知乎每日精选</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/netease/page/0?channel=T1348654756909">网易回声</a></p>
+					<p class="col-xs-12 col-md-2 lead"><a href="/netease/page/0?channel=T1387350092857">大国小民</a></p>
+					<!-- <p class="col-xs-12 col-md-2 lead"><a href="">papi酱</a></p> -->
+				</div>
+				<hr>	
+				<c:forEach items="${readList }" var="n" varStatus="s">
+				  	<div class="col-md-6 col-xs-12 lead less_text">
+				  		<c:if test='${!empty n.photosetID}'><a href="/netease/photo/${n.photosetID}.html">${n.title }</a></c:if>
+				  		<c:if test='${empty n.photosetID && !empty n.postid}'><a href="/netease/post/${n.postid}.html">${n.title }</a></c:if>
+				  	</div>
+				</c:forEach>
+			</div>
+		</div>
+		<div class="row">
+			<div class="index-header col-xs-12 col-md-12">
+				<h2 class="text-center bg-info">24小时</h2>
+				<c:forEach items="${news }" var="n" varStatus="index">
+					<div class="col-xs-12 col-md-6">
+						<div class="media">
+							<div class="media-left media-middle">
+								<c:if test='${empty n.url}'>
+									<a href="/netease/photo/${n.photosetID}.html">
+										<img class="media-object" src="${n.imgsrc}" alt="${n.title }" style="width: 64px; height: 64px;" class="img-responsive">
+									</a>
+								</c:if>
+								<c:if test='${!empty n.url}'>
+									<a href="/netease/post/${n.postid}.html">
+										<img class="media-object" src="${n.imgsrc}" alt="${n.title }" style="width: 64px; height: 64px;" class="img-responsive">
+									</a>
+								</c:if>
+							</div>
+							<div class="media-body">
+								<p class="media-heading">
+									<c:if test='${empty n.url}'><a href="/netease/photo/${n.photosetID}.html">${n.title }</a></c:if>
+						  			<c:if test='${!empty n.url}'><a href="/netease/post/${n.postid}.html">${n.title }</a></c:if>
+						  			<small>【${n.votecount}】</small>
+								</p>
+								<%-- <small>${n.ptime}</small>
+								<small>${n.source}</small> --%>
+								<p>
+									<c:if test='${empty n.url}'><a href="/netease/photo/${n.photosetID}.html">${n.digest }</a></c:if>
+						  			<c:if test='${!empty n.url}'><a href="/netease/post/${n.postid}.html">${n.digest }</a></c:if>
+								</p>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+		<%-- <div class="row">
 			<div class="page-header-small col-xs-12 col-md-12">
 				<h2>精彩娱乐视频</h2>
 			</div>
@@ -108,7 +196,7 @@
 					</div>
 				</c:forEach>
 			</div>
-		</div>
+		</div> --%>
 	</div>
 	<c:import url="footer.jsp"/>
 	</body>

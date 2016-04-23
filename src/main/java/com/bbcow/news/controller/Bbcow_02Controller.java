@@ -23,9 +23,10 @@ public class Bbcow_02Controller {
 	public String index(Model model){
 		
 		List<Simple01Vo> list = new LinkedList<Simple01Vo>();
-		list.add(new Simple01Vo("T1374655641708","读写客",(List<NeatEaseVo>) DataCache.get("T1374655641708")));
 		list.add(new Simple01Vo("T1387970173334","网易看客",(List<NeatEaseVo>) DataCache.get("T1387970173334")));
 		list.add(new Simple01Vo("T1374539968172","果壳科技",(List<NeatEaseVo>) DataCache.get("T1374539968172")));
+		list.add(new Simple01Vo("T1387350092857","大国小民",(List<NeatEaseVo>) DataCache.get("T1387350092857")));
+		list.add(new Simple01Vo("T1374655641708","读写客",(List<NeatEaseVo>) DataCache.get("T1374655641708")));
 		list.add(new Simple01Vo("T1374539990324","知乎每日精选",(List<NeatEaseVo>) DataCache.get("T1374539990324")));
 		list.add(new Simple01Vo("T1348654756909","网易回声",(List<NeatEaseVo>) DataCache.get("T1348654756909")));
 		

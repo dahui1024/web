@@ -9,7 +9,7 @@
 
 	<!-- Begin page content -->
 	<div class="container">
-		<h1>门牙娱乐<small>&nbsp;&nbsp;你愚我乐，你乐我疯！</small></h1>
+		<h1 class="text-center">门牙娱乐<small>&nbsp;&nbsp;你愚我乐，你乐我疯！</small></h1>
 		<c:forEach items="${vList }" var="n" varStatus="s">
 			<div class="col-xs-12 col-md-4">
 				<div class="thumbnail" style="background-color: #FFFFCC;border: 0">

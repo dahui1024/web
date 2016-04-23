@@ -36,6 +36,7 @@ public abstract class AbstractNeatEaseSpider {
 		new T1387970173334();
 		new T1374539990324();
 		new T1374655641708();
+		new T1387350092857();
 	}
 	
 	public AbstractNeatEaseSpider(String url){
