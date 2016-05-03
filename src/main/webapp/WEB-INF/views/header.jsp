@@ -5,11 +5,11 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-   <meta name="description" content="门牙引力波，一张嘴我看到了门牙，一上网我看到了世界。${title }">
+   <meta name="description" content="中场快看，时间是金钱，知识是力量，以最少金钱获取最大力量。${title }">
    <meta name="keywords" content="引力波,新闻,快报,网易新闻,今日头条,知乎日报,秒拍">
    <link rel="icon" href="/static/favicon.ico">
    <title>
-		<c:if test="${empty title }">门牙引力波 - 一张嘴我看到了门牙，一上网我看到了世界。</c:if>
+		<c:if test="${empty title }">中场快看 - 时间是金钱，知识是力量，以最少金钱获取最大力量。</c:if>
 		<c:if test="${!empty title }">${title }</c:if>
    </title>
    <!-- Bootstrap core CSS -->

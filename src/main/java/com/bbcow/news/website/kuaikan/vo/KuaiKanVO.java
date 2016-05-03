@@ -1,10 +1,22 @@
 package com.bbcow.news.website.kuaikan.vo;
 
 public class KuaiKanVO {
+	private String id;
 	private String label;
 	private String title;
+	private String desc;
 	private String url;
 	private String img;
+	private String subTitle;
+	private String subImg;
+	private String subId;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getLabel() {
 		return label;
 	}
@@ -28,6 +40,31 @@ public class KuaiKanVO {
 	}
 	public void setImg(String img) {
 		this.img = img;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	
+	public String getSubTitle() {
+		return subTitle;
+	}
+	public void setSubTitle(String subTitle) {
+		this.subTitle = subTitle;
+	}
+	public String getSubImg() {
+		return subImg;
+	}
+	public void setSubImg(String subImg) {
+		this.subImg = subImg;
+	}
+	public String getSubId() {
+		return subId;
+	}
+	public void setSubId(String subId) {
+		this.subId = subId;
 	}
 	
 }

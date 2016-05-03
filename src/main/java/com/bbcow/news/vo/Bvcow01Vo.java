@@ -2,13 +2,13 @@ package com.bbcow.news.vo;
 
 import java.util.List;
 
-import com.bbcow.news.website.neatease.vo.NeatEaseVo;
+import com.bbcow.news.website.AbstractVo;
 
-public class Simple01Vo {
+public class Bvcow01Vo {
 	private String id;
 	private String name;
-	private List<NeatEaseVo> articles;
-	public Simple01Vo(String id,String name,List<NeatEaseVo> articles){
+	private List<? extends AbstractVo> articles;
+	public Bvcow01Vo(String id,String name,List<? extends AbstractVo> articles){
 		this.id = id;
 		this.name = name;
 		this.articles = articles;
@@ -25,10 +25,10 @@ public class Simple01Vo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<NeatEaseVo> getArticles() {
+	public List<? extends AbstractVo> getArticles() {
 		return articles;
 	}
-	public void setArticles(List<NeatEaseVo> articles) {
+	public void setArticles(List<? extends AbstractVo> articles) {
 		this.articles = articles;
 	}
 }

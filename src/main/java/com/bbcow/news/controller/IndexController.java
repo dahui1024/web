@@ -1,6 +1,5 @@
 package com.bbcow.news.controller;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,10 +20,9 @@ public class IndexController {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	@RequestMapping(value = "")
 	public String index(Model model){
-		model.addAttribute("news", DataCache.get("T1429173762551"));
+		model.addAttribute("news", DataCache.get("T1348647909107"));
 
-		model.addAttribute("readTop", DataCache.get("T1387970173334").get(0));
-		model.addAttribute("readList", DataCache.get("T1387970173334").subList(1, 3));
+		//model.addAttribute("readTop", DataCache.get("T1387970173334").get(0));
 		
 		List<MiaopaiVo> videoList = new LinkedList<MiaopaiVo>();
 		videoList.addAll((List<MiaopaiVo>) DataCache.get("MP_feidie").subList(0, 4));
@@ -32,7 +30,6 @@ public class IndexController {
 		videoList.addAll((List<MiaopaiVo>) DataCache.get("MP_nima").subList(0, 4));
 		videoList.addAll((List<MiaopaiVo>) DataCache.get("MP_papi").subList(0, 4));
 		videoList.addAll((List<MiaopaiVo>) DataCache.get("MP_baisi").subList(0, 4));
-		/*videoList.addAll((List<MiaopaiVo>) DataCache.get("MP_baoman"));*/
 		Collections.sort(videoList, new Comparator<MiaopaiVo>() {
 			@Override
 			public int compare(MiaopaiVo o1, MiaopaiVo o2) {
@@ -44,11 +41,10 @@ public class IndexController {
 		
 		List<NeatEaseVo> readList = new LinkedList<NeatEaseVo>();
 		readList.addAll((List<NeatEaseVo>) DataCache.get("T1387970173334").subList(0, 5));
-		readList.addAll((List<NeatEaseVo>) DataCache.get("T1374539968172").subList(0, 5));
-		/*readList.addAll((List<NeatEaseVo>) DataCache.get("T1374539990324").subList(0, 5));*/
-		readList.addAll((List<NeatEaseVo>) DataCache.get("T1348654756909").subList(0, 5));
-		readList.addAll((List<NeatEaseVo>) DataCache.get("T1374655641708").subList(0, 5));
-		readList.addAll((List<NeatEaseVo>) DataCache.get("T1387350092857").subList(0, 6));
+		readList.addAll((List<NeatEaseVo>) DataCache.get("T1387350092857").subList(0, 5));
+		readList.addAll((List<NeatEaseVo>) DataCache.get("T1374542231526").subList(0, 5));
+		readList.addAll((List<NeatEaseVo>) DataCache.get("T1383729011070").subList(0, 5));
+		readList.addAll((List<NeatEaseVo>) DataCache.get("T1413268231428").subList(0, 6));
 		Collections.sort(readList, new Comparator<NeatEaseVo>() {
 			@Override
 			public int compare(NeatEaseVo o1, NeatEaseVo o2) {

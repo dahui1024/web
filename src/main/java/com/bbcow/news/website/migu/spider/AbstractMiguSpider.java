@@ -61,12 +61,12 @@ public class AbstractMiguSpider {
 			Iterator<JsonNode> contents = node.get("contList").iterator();
 			while(contents.hasNext()){
 				JsonNode content = contents.next();
+				System.out.println(content.get("param").asText());
 				MiguVo vo = new MiguVo();
 				vo.setImg(content.get("img").asText());
 				vo.setName(content.get("name").asText());
 				vo.setParam(content.get("param").asText());
 				vo.setProp(content.get("prop").asText());
-				
 				if(content.get("vip").asInt()<=0)
 					list.add(vo);
 			}
@@ -80,12 +80,13 @@ public class AbstractMiguSpider {
 		MiguVo vo = new MiguVo();
 		OkHttpClient client = new OkHttpClient();
 		client.setConnectTimeout(5000, TimeUnit.MILLISECONDS);
-		Request request = new Request.Builder().url(detail_url.replace("$1", param+"&nodeId=&objType=videolive&"))
+		Request request = new Request.Builder().url(detail_url.replace("$1", param+"&nodeId=&objType=videolive"))
 				.addHeader("host", "migu.cmvideo.cn")
 				.addHeader("Cache-control", "max-age=3600")
 				.addHeader("User-Agent", "iPhone7,2_375.000000*667.000000")
 				.addHeader("x-up-bear-type", "WLAN")
 				.addHeader("Content-Type", "application/x-www-form-urlencoded")
+				.addHeader("X_UP_CLIENT_CHANNEL_ID", "22040108-99000-200300020100001")
 				.build();
 		
 		try {

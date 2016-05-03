@@ -26,23 +26,36 @@ public abstract class AbstractNeatEaseSpider {
 	private static String detail_url = "http://c.m.163.com/nc/article/$1/full.html";
 	private static String photo_url = "http://c.m.163.com/photo/api/set/$1/$2.json";
 	protected static Map<String, AbstractNeatEaseSpider> spiders = new HashMap<String, AbstractNeatEaseSpider>();
+	protected String key = this.getClass().getSimpleName();
 	
 	private final Gson gson = new Gson();
 	
 	static{
-		new T1374539968172();
+		/*new T1374539968172();
 		new T1429173762551();
 		new T1348654756909();
 		new T1387970173334();
 		new T1374539990324();
 		new T1374655641708();
-		new T1387350092857();
+		new T1387350092857();*/
 	}
 	
 	public AbstractNeatEaseSpider(String url){
 		this.url = url;
 	}
 	public static AbstractNeatEaseSpider getInstance(String key){
+		if(spiders.get(key) == null){
+			try {
+				AbstractNeatEaseSpider nes = (AbstractNeatEaseSpider) Class.forName(AbstractNeatEaseSpider.class.getPackage().getName()+"."+key).newInstance();
+				spiders.put(key, nes);
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
 		return spiders.get(key);
 	}
 	/**

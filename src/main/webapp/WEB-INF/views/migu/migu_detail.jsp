@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="title" value="${video_title } - 直播 -门牙引力波" scope="request"/>
+<c:set var="title" value="${video_title } - 直播 -中场快看" scope="request"/>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <c:import url="../header.jsp"></c:import>
@@ -8,7 +8,7 @@
     <c:import url="../default.jsp"></c:import>
     <div class="container">
       <div class="blog-header text-center">
-			<h1>门牙电视直播<small>&nbsp;&nbsp;看抗日神剧、每日7点AV世界，赛过活神仙！</small></h1>
+			<h1>中场电视直播<small>&nbsp;&nbsp;看抗日神剧、每日7点AV世界，赛过活神仙！</small></h1>
       </div>
       <c:import url="../share.jsp"></c:import>
       <div class="row">

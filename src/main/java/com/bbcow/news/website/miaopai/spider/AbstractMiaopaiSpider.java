@@ -21,16 +21,22 @@ public abstract class AbstractMiaopaiSpider {
 	protected String url = "http://api.miaopai.com/m/shot_channel.json?f_type=v2&likeStat=0&live=1&os=ios&page=$1&per=20&suid=4NUB4nrCdVdQFbHH&unique_id=79d273867a9c357b6f978203addcb0b71234284759&version=6.3.1";
 	private static String video_url = "http://gslb.miaopai.com/stream/$1.mp4?vend=miaopai&";
 	protected static Map<String, AbstractMiaopaiSpider> spiders = new HashMap<String, AbstractMiaopaiSpider>();
-	public static String[] video_keys = {"MP_baoman","MP_chenxiang","MP_feidie","MP_nima","MP_papi","MP_baisi"};	
-	static{
-		new Spider_Baoman();
-		new Spider_Chenxiang();
-		new Spider_Feidie();
-		new Spider_Nima();
-		new Spider_Papi();
-		new Spider_Baisi();
-	}
+	public static List<String> keys = new LinkedList<String>();
+	protected String key = this.getClass().getSimpleName();
+
 	public static AbstractMiaopaiSpider getInstance(String key){
+		if(spiders.get(key) == null){
+			try {
+				AbstractMiaopaiSpider nes = (AbstractMiaopaiSpider) Class.forName(AbstractMiaopaiSpider.class.getPackage().getName()+"."+key).newInstance();
+				spiders.put(key, nes);
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
 		return spiders.get(key);
 	}
 	

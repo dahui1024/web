@@ -39,9 +39,9 @@ public class MiaopaiController {
 		model.addAttribute("length", length);
 		
 		Random r = new Random();
-		int i = r.nextInt(AbstractMiaopaiSpider.video_keys.length);
+		int i = r.nextInt(AbstractMiaopaiSpider.keys.size());
 		
-		model.addAttribute("videoList", DataCache.get(AbstractMiaopaiSpider.video_keys[i]));	
+		model.addAttribute("videoList", DataCache.get(AbstractMiaopaiSpider.keys.get(i)));	
 		
 		return "miaopai/miaopai_detail";
 	}

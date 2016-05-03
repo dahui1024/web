@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="title" value="门牙电视直播 - 看抗日神剧、每日7点AV世界，赛过活神仙！" scope="request"/>
+<c:set var="title" value="中场电视直播 - 看抗日神剧、每日7点AV世界，赛过活神仙！" scope="request"/>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <c:import url="header.jsp"></c:import>
@@ -10,7 +10,7 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header-small">
-			<h1 class="text-center">门牙电视直播<small>&nbsp;&nbsp;看抗日神剧、每日7点AV世界，赛过活神仙！</small></h1>
+			<h1 class="text-center">中场电视直播<small>&nbsp;&nbsp;看抗日神剧、每日7点AV世界，赛过活神仙！</small></h1>
 		</div>
 		<c:forEach items="${vList }" var="n" varStatus="s">
 			<div class="col-xs-6 col-md-4">
